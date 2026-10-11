@@ -59,3 +59,52 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## URL Shortener – Project README
+
+This repository contains a small multi-tenant URL Shortener built for a coding exercise.
+
+Requirements
+- PHP 8.2+
+- Composer
+- SQLite (used for local development)
+
+Local setup
+
+1. Clone the repo
+2. Run `composer install`
+3. Copy `.env.example` to `.env` and set `DB_CONNECTION=sqlite`
+4. Create SQLite file: `touch database/database.sqlite` (or on Windows create an empty file)
+5. `php artisan key:generate`
+6. `php artisan migrate --seed`
+7. `php artisan serve`
+
+SuperAdmin credentials
+- email: `superadmin@example.com`
+- password: `password`
+
+Tests
+
+- Run `php artisan test` to execute the PHPUnit test suite.
+
+Flow Walkthrough
+
+- Login as SuperAdmin -> Invite Admin into a new company -> visit acceptance link -> set password -> Admin logs in -> Admin invites Member into their company -> Admin or Member creates short URLs -> Visit `/s/{code}` to resolve.
+
+Assumptions
+- Multiple companies supported.
+- Each user has one role: SuperAdmin, Admin, Member, Sales, Manager.
+- SuperAdmin invites Admins into new companies.
+- Admin invites Admins or Members into their company.
+- Admin and Member can create short URLs. SuperAdmin cannot.
+- SuperAdmin can see all short URLs across all companies.
+- Admin can only see short URLs in their company.
+- Member can only see short URLs they created.
+- Short URLs are publicly resolvable at `/s/{code}`.
+
+AI Tools Used
+
+- [PLACEHOLDER] Insert AI tools used and purpose here.
+
