@@ -106,5 +106,5 @@ Assumptions
 
 AI Tools Used
 
-- [PLACEHOLDER] Insert AI tools used and purpose here.
+- Copilot and codex.
 
