@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ShortUrlRequest;
 use App\Models\ShortUrl;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Str;
+use Illuminate\Support\Str;
 
 class ShortUrlController extends Controller
 {
